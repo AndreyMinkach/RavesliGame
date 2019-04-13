@@ -1,11 +1,10 @@
 #ifndef ADDITION_H
 #define ADDITION_H
 
-
-class addition
+class Addition
 {
 public:
-    addition();
+    Addition();
 };
 
 #endif // ADDITION_H

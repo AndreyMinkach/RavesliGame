@@ -8,7 +8,9 @@ SOURCES += \
     creature.cpp \
     player.cpp \
     monster.cpp \
-    addition.cpp
+    addition.cpp \
+    logic.cpp \
+    randomnumber.cpp
 
 HEADERS += \
     creature.h \

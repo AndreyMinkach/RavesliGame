@@ -1,5 +1,3 @@
-#include "creature.h"
-#include "player.h"
 #include "monster.h"
 #include "logic.h"
 

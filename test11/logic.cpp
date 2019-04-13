@@ -1,18 +1,6 @@
-#ifndef LOGIC_H
-#define LOGIC_H
+#include "logic.h"
 
-#include "creature.h"
-#include "player.h"
-#include "monster.h"
-
-static int killedEnem = 0;
-
-void playerGoShop(Player &p)
-{
-    
-}
-
-void attackMonster(Player &p ,Monster &m)
+void attackMonster(Player &p, Monster &m)
 {
     if(p.isDead())
         return;
@@ -22,7 +10,7 @@ void attackMonster(Player &p ,Monster &m)
     if(m.isDead())
     {
         system("cls");
-        std::cout<< "You kill the " << m.getName()<<std::endl;
+        std::cout<< "You kill the " << m.getName()<<std::endl<<std::endl;
         p.lvlUp();
         p.addGold(m.getGold());
         killedEnem++;
@@ -69,7 +57,7 @@ void fightMonster(Player &p)
         }
         else if(choice == "F" || choice == "f")
         {
-           attackMonster(p,m);
+           attackMonster(p, m);
            attackPlayer(m, p);
         }
         else if(choice == "stat")
@@ -78,7 +66,7 @@ void fightMonster(Player &p)
         }
         else if (choice == "shop" || choice == "s")
         {
-            playerGoShop(p);
+           // playerGoShop(p);
         }
         else {
             std::cout<<"Mistake in input\n";
@@ -86,4 +74,3 @@ void fightMonster(Player &p)
     }
 }
 
-#endif // LOGIC_H
