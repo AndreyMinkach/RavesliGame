@@ -8,9 +8,11 @@ SOURCES += \
     creature.cpp \
     player.cpp \
     monster.cpp \
-    addition.cpp \
     logic.cpp \
-    randomnumber.cpp
+    randomnumber.cpp \
+    item.cpp \
+    weapon.cpp \
+    shop.cpp
 
 HEADERS += \
     creature.h \
@@ -18,4 +20,6 @@ HEADERS += \
     monster.h \
     randomnumber.h \
     logic.h \
-    addition.h
+    item.h \
+    weapon.h \
+    shop.h

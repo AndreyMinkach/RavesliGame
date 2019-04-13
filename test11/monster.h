@@ -27,16 +27,9 @@ public:
 
     static MonsterData monsterData[MAX_TYPES];
 
-    Monster(Type type)
-        : Creature(monsterData[type].name, monsterData[type].symbol, monsterData[type].health, monsterData[type].damage, monsterData[type].gold)
-    {
-    }
+    Monster(Type type);
 
-    static Monster getRandomMonster()
-    {
-        int num = getRandomNumber(0, MAX_TYPES - 1);
-        return Monster(static_cast<Type>(num));
-    }
+    static Monster getRandomMonster();
 
 };
 

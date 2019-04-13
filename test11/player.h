@@ -10,7 +10,7 @@ class Player : public Creature
 private:
     enum Type
     {
-        Mag,
+        MAG,
         ORC,
         OGR,
         PALADIN,
@@ -34,7 +34,6 @@ private:
 
 public:
     Player(Type type);
-
 
     void lvlUp();
 

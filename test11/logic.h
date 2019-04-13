@@ -6,12 +6,8 @@
 
 static int killedEnem = 0;
 
-/*
-void playerGoShop(Player &p)
-{
-    
-}
-*/
+void playerGoShop();
+
 
 void attackMonster(Player &p ,Monster &m);
 

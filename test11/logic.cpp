@@ -1,4 +1,5 @@
 #include "logic.h"
+#include "shop.h"
 
 void attackMonster(Player &p, Monster &m)
 {
@@ -28,6 +29,14 @@ void attackPlayer(Monster &m, Player &p)
 void showStat(Player &p)
 {
     std::cout<<"You kill "<<killedEnem<<". Good job.\nYour damage is "<< p.getDamage()<<".\nYour lvl is " << p.getLvl()<<std::endl;
+}
+
+
+void playerGoShop()
+{
+
+    //switch () {}
+    Sword a = a.buySword();
 }
 
 void fightMonster(Player &p)
@@ -66,7 +75,7 @@ void fightMonster(Player &p)
         }
         else if (choice == "shop" || choice == "s")
         {
-           // playerGoShop(p);
+           playerGoShop();
         }
         else {
             std::cout<<"Mistake in input\n";

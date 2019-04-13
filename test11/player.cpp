@@ -12,7 +12,6 @@ void Player::lvlUp()
 
 
 Player Player::chooseRace()
-
 {
     std::cout<<"Choose the class of your player\n 1)Mag, 7 hlt, 7 dmg, 100 gold\n 2)Orc, 15 hlt, 3 dmg, 20 gold\n 3)Ogr, 10 hlt, 4 dmg, 25 gold\n 4)Paladin, 20 hlt, 2 dmg, 50 gold\n 5)Elf, 10 hlt, 5 dmg, 40 gold\n 6)Troll, 12 hlt, 4 dmg, 10 gold\n 7)Humann, 10 hlt, 4 dmg, 50 gold\n";
     int ch;
