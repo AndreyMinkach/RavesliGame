@@ -11,8 +11,7 @@ SOURCES += \
     logic.cpp \
     randomnumber.cpp \
     item.cpp \
-    weapon.cpp \
-    shop.cpp
+    weapon.cpp
 
 HEADERS += \
     creature.h \

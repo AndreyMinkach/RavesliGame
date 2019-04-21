@@ -40,16 +40,18 @@ void Creature::setGold(int gold)
     mGold = gold;
 }
 
+Creature::Creature(const std::string &name, char symbol, int health, int damage, int gold)
+    :   mName(name), mSymbol(symbol), mHealth(health), mDamage(damage), mGold(gold)
+{}
+
 void Creature::reduceHealth(int healthToReduce)
 {
-     mHealth -= healthToReduce;
+    mHealth -= healthToReduce;
 }
 
 bool Creature::isDead()
 {
-   {
-        return mHealth <= 0;
-    }
+    return (mHealth <= 0);
 }
 
 void Creature::addGold(int goldToAdd)

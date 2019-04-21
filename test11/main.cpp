@@ -10,25 +10,24 @@ int main()
         std::string playerName;
         std::cin >> playerName;
 
-        Player p = Player::chooseRace();
-        p.setName(playerName);
+        Player player = Player::chooseRace();
+        player.setName(playerName);
 
         system("cls");
 
-        std::cout << "Welcome, " << p.getName() << '\n';
+        std::cout << "Welcome, " << player.getName() << '\n';
 
-        while (!p.isDead() && !p.hasWon())
+        while (!player.isDead() && !player.hasWon())
         {
-            fightMonster(p);
+            fightMonster(player);
         }
-        if (p.isDead())
+        if (player.isDead())
         {
-            std::cout << "You died at level " << p.getLvl() << " and with " << p.getGold() << " gold.\n";
-            std::cout << "Too bad you can't take it with you!\n";
+            std::cout << "You died at level " << player.getLvl() << " and with " << player.getGold() << " gold.\n";
         }
         else
         {
-            std::cout << "You won the game with " << p.getGold() << " gold!\n";
+            std::cout << "You won the game with " << player.getGold() << " gold!\n";
         }
 
         return 0;

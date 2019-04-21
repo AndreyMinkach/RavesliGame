@@ -10,7 +10,6 @@ void Player::lvlUp()
     mDamage++;
 }
 
-
 Player Player::chooseRace()
 {
     std::cout<<"Choose the class of your player\n 1)Mag, 7 hlt, 7 dmg, 100 gold\n 2)Orc, 15 hlt, 3 dmg, 20 gold\n 3)Ogr, 10 hlt, 4 dmg, 25 gold\n 4)Paladin, 20 hlt, 2 dmg, 50 gold\n 5)Elf, 10 hlt, 5 dmg, 40 gold\n 6)Troll, 12 hlt, 4 dmg, 10 gold\n 7)Humann, 10 hlt, 4 dmg, 50 gold\n";
@@ -20,38 +19,38 @@ Player Player::chooseRace()
     {
     case 1:
     {
-        Player p = Player(static_cast<Type>(0));
-        return p;
+        Player *player = new Player(static_cast<Type>(0));
+        return *player;
     }
     case 2:
     {
-        Player p = Player(static_cast<Type>(1));
-        return p;
+        Player *player = new Player(static_cast<Type>(1));
+        return *player;
     }
     case 3:
     {
-        Player p = Player(static_cast<Type>(2));
-        return p;
+        Player *player = new Player(static_cast<Type>(2));
+        return *player;
     }
     case 4:
     {
-        Player p = Player(static_cast<Type>(3));
-        return p;
+        Player *player = new Player(static_cast<Type>(3));
+        return *player;
     }
     case 5:
     {
-        Player p = Player(static_cast<Type>(4));
-        return p;
+        Player *player = new Player(static_cast<Type>(4));
+        return *player;
     }
     case 6:
     {
-        Player p = Player(static_cast<Type>(5));
-        return p;
+        Player *player = new Player(static_cast<Type>(5));
+        return *player;
     }
     case 7:
     {
-        Player p = Player(static_cast<Type>(6));
-        return p;
+        Player *player = new Player(static_cast<Type>(6));
+        return *player;
     }
     }
 }

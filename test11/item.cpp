@@ -7,3 +7,4 @@ Item::Item()
 Item::Item(const std::string &name, const int &cost, const int &damage)
     : mName(name), mCost(cost), mDamage(damage)
 {}
+

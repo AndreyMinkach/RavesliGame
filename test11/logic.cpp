@@ -1,24 +1,26 @@
 #include "logic.h"
-#include "shop.h"
+#include "weapon.h"
 
-void attackMonster(Player &p, Monster &m)
+
+
+void playerAttackTheMonster(Player &player, Monster &monster)
 {
-    if(p.isDead())
+    if(player.isDead())
         return;
 
-    m.reduceHealth(p.getDamage());
-    std::cout<< "You hit the " << m.getName() << " for " << p.getDamage() <<" damage.\n";
-    if(m.isDead())
+    monster.reduceHealth(player.getDamage());
+    std::cout<< "You hit the " << monster.getName() << " for " << player.getDamage() <<" damage.\n";
+    if(monster.isDead())
     {
         system("cls");
-        std::cout<< "You kill the " << m.getName()<<std::endl<<std::endl;
-        p.lvlUp();
-        p.addGold(m.getGold());
+        std::cout<< "You kill the " << monster.getName()<<std::endl<<std::endl;
+        player.lvlUp();
+        player.addGold(monster.getGold());
         killedEnem++;
     }
 }
 
-void attackPlayer(Monster &m, Player &p)
+void monsterAttackPlayer(Monster &m, Player &p)
 {
     if(m.isDead())
         return;
@@ -32,19 +34,34 @@ void showStat(Player &p)
 }
 
 
-void playerGoShop()
+void playerGoShop(Player &p)
 {
+    int choice;
+    std::cout<<"What do you want to buy:\n 1)Swords\n 2)Staff ";
+    std::cin>> choice;
 
-    //switch () {}
-    Sword a = a.buySword();
+    switch (choice)
+    {
+    case 1:
+    {
+        Sword sword;
+        checkCostOfItem(p, sword.mCost);
+        break;
+    }
+    case 2:
+        Staff staff = staff.buyStaff();
+        checkCostOfItem(p, staff.mCost);
+        break;
+    }
+
 }
 
-void fightMonster(Player &p)
+void fightMonster(Player &player)
 {
-    Monster m = Monster::getRandomMonster();
-    std::cout << "You have encountered a " << m.getName() << " (" << m.getSymbol() << ").\n";
+    Monster monster = Monster::getRandomMonster();
+    std::cout << "You have encountered a " << monster.getName() << " (" << monster.getSymbol() << ").\n";
 
-    while (!m.isDead() && !p.isDead())
+    while (!monster.isDead() && !player.isDead())
     {
         std::cout<<"(F)ight or (R)un?\n";
         std::string choice;
@@ -55,7 +72,7 @@ void fightMonster(Player &p)
             if(getRandomNumber(1,2) == 1)
             {
                 std::cout<<"Bad luck, you must fight this round.\n";
-                attackMonster(p ,m);
+                playerAttackTheMonster(player ,monster);
                 continue;
             }
             else
@@ -66,16 +83,16 @@ void fightMonster(Player &p)
         }
         else if(choice == "F" || choice == "f")
         {
-           attackMonster(p, m);
-           attackPlayer(m, p);
+           playerAttackTheMonster(player, monster);
+           monsterAttackPlayer(monster, player);
         }
         else if(choice == "stat")
         {
-            showStat(p);
+            showStat(player);
         }
         else if (choice == "shop" || choice == "s")
         {
-           playerGoShop();
+           playerGoShop(player);
         }
         else {
             std::cout<<"Mistake in input\n";
@@ -83,3 +100,16 @@ void fightMonster(Player &p)
     }
 }
 
+
+
+int checkCostOfItem(Player &p, Item &item)
+{
+    if(item.mCost > p.getGold())
+    {
+        std::cout<<"Not enough gold!";
+    }
+    else
+    {
+
+    }
+}

@@ -3,17 +3,17 @@
 
 #include "player.h"
 #include "monster.h"
+#include "item.h"
 
 static int killedEnem = 0;
 
-void playerGoShop();
+int checkCostOfItem(Player &p, Item &item);
 
+void playerGoShop(Player &p);
 
-void attackMonster(Player &p ,Monster &m);
+void playerAttackTheMonster(Player &p ,Monster &m);
 
-
-void attackPlayer(Monster &m, Player &p);
-
+void monsterAttackPlayer(Monster &m, Player &p);
 
 void showStat(Player &p);
 

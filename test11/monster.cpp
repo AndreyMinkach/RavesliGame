@@ -2,10 +2,10 @@
 
 Monster::MonsterData Monster::monsterData[Monster::MAX_TYPES]
 {
-    { "dragon", 'D', 20, 4, 100 },
-    { "witch", 'w', 5, 2, 30 },
-    { "orc", 'o', 4, 2, 25 },
-    { "slime", 's', 1, 1, 10 }
+    { "dragon", 'D', 20, 4, 10 },
+    { "witch", 'w', 5, 2, 5 },
+    { "orc", 'o', 4, 2, 2 },
+    { "slime", 's', 1, 1, 1 }
 };
 
 Monster::Monster(Monster::Type type)

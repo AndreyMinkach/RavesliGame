@@ -4,9 +4,8 @@
 #include <iostream>
 #include <string>
 
-class Item
+struct Item
 {
-public:
     std::string mName;
     int mCost;
     int mDamage;
@@ -14,6 +13,7 @@ public:
     Item();
 
     Item(const std::string &name, const int &cost, const int &damage);
+
 };
 
 #endif // ITEM_H
